@@ -1,6 +1,7 @@
 ## Project: Design a store database
-- For this project, I designed a small pharmacy store database using the SQL lessons I learned from Khan Academy. The goal was to practice creating tables, 
-inserting real-world medication data, and running queries that organize and summarize inventory information. This helped me apply what I learned in a practical way and build a basic system that could track stock levels, pricing, and product availability.
+- For this project, using SQL I created a Pharmacy Inventory Database with Summary Statistic. The goal was to practice creating tables, 
+inserting real-world medication data, and running queries that organize and summarize inventory information. This helped me apply what
+I learned in a practical way and build a basic system that could track stock levels, pricing, and product availability.
 
 ## Technologies
 - SQL
@@ -15,6 +16,7 @@ inserting real-world medication data, and running queries that organize and summ
 - I learned how to structure a functional SQL table and load it with real-world pharmacy data. I also practiced grouping and summarizing data using aggregate functions. More importantly, I learned how ordering and filtering can turn a simple dataset into something that actually supports decision-making in an operational environment.
 
 ## How it can be Improved
+Add another column for last_date_purchased and auto increment the ID
 
 Khan academy - Project: Design a store database
 Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
@@ -31,7 +33,12 @@ Pharmacy store
 -order them price, and show one statistic
 */
 
-CREATE Table mendezPharmacy (id INTEGER Primary key, name TEXT, Quantity INTEGER, Package_Size INTEGER, Price_in_dollars INTEGER);
+CREATE Table mendezPharmacy (
+id INTEGER Primary key, 
+name TEXT, 
+Quantity INTEGER, 
+Package_Size INTEGER, 
+Price_in_dollars INTEGER);
 
 INSERT INTO mendezPharmacy VALUES (1, "Atorvastatin 5mg", 1, 30, 4 );
 INSERT INTO mendezPharmacy VALUES (2, "Atorvastatin 5mg", 3, 60, 8);
