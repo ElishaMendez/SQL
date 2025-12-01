@@ -22,10 +22,11 @@ min(Space_Flight_hr) as Min_hrs
 from astronauts;
 
 --- What about those numbers per category in the data (using HAVIN)?---
-select * from astronauts
-group by name
+select name, Graduate_Major, avg(Space_Flight_hr) as Avg_hours
+from astronauts
+group by Graduate_Major
 having avg(Space_Flight_hr) <= 100
-order by Space_Flight_hr;
+order by Avg_Hours;
 
 --- What ways are there to group the data values that don’t exist yet (using CASE)?---
 select name, count(Space_Flight_hr) as space_HOURS,
