@@ -1,10 +1,3 @@
--- ------------------------------------------------------------
--- Famous People SQL Project
--- Sample data values provided with assistance from ChatGPT
--- Author: Elisha Mendez
--- Date: 2025-12-06
--- ------------------------------------------------------------
-
 Create Table famous_people (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -78,14 +71,14 @@ INSERT INTO movie_cast (person_id, movie_id) VALUES (14, 7);
 INSERT INTO movie_cast (person_id, movie_id) VALUES (15, 10);
 INSERT INTO movie_cast (person_id, movie_id) VALUES (9, 10);
 
--- Who they're married too
+--- Who they're married too? I used a self Join and added aliases "a" "b"---
 SELECT a.name, b.name FROM marriage
 JOIN famous_people a
-ON marriage.person1_id = a.id
+ON marriage.person1_id = a.id --connects the 1st person in each marraige to their name
 JOIN famous_people b
-ON marriage.person2_id = b.id;
+ON marriage.person2_id = b.id; -- connects the 2nd person in each marriage to their name
 
--- What movies are they in?
+--- What movies are they in? Using the same concept as above but since we have 2 different named attributes I didn't need to use aliases---
 SELECT famous_people.name, movies.title FROM movie_cast
 JOIN famous_people
 ON movie_cast.person_id = famous_people.id
